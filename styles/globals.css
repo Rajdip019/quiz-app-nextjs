@@ -1,16 +1,58 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@layer base {
 
-* {
-  box-sizing: border-box;
+  h1 {
+    font-family: Manrope;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+  }
+
+  h2 span {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+  }
+
+
+  h4 {
+    font-family: 'Inter';
+    font-weight: 700;
+
+  }
+
+  h4 span {
+    font-size: 12px;
+  }
+
+  h5 {
+    color: white;
+
+  }
+  body {
+    margin:0px !important;
+  }
+
+      span {
+          font-family: 'Inter', sans-serif;
+          font-size:14px;
+      }
+
+      p {
+          font-family: 'Inter', sans-serif;
+      }
+
+  :root {
+    --gray: #ACACAC;
+    --main: #23827E;
+  }
+
+
 }
