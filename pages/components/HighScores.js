@@ -9,6 +9,8 @@ const HighScores = ({handleState, highScore, hadleClearHighScore }) => {
         <h1 className="font-black font-Inter mb-6 drop-shadow-sm">
           Highscores
         </h1>
+        {highScore && (
+        <>
         {highScore.map((entry, index) => {
         return (
         <p className=" font-medium drop-shadow-sm mb-5 indent-3">
@@ -16,6 +18,8 @@ const HighScores = ({handleState, highScore, hadleClearHighScore }) => {
         </p>
         )
         })}
+        </>
+        )}
         <button className="bg-skin-main text-white px-3 py-3 rounded-lg hover:bg-green-900 transition-all shadow-md mr-5 mb-3" onClick={() => {handleState("start")}}>
           Go back
         </button>
