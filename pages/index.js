@@ -7,6 +7,7 @@ import questions from "./../database/questions";
 import HighScores from "./components/HighScores";
 import AllDone from "./components/AllDone";
 import Github from "./components/Github";
+import TimeUp from "./components/TimeUp";
 
 const Home = () => {
   const [state, setState] = useState("start");
@@ -36,6 +37,7 @@ const Home = () => {
   const handleState = (newState) => {
     setState(newState);
   };
+
 
   //Handleing the Score
 
@@ -72,7 +74,7 @@ const Home = () => {
         setTimerOn(false);
         setTime(50000);
       }, 900);
-      setState("done");
+      setState("timeup");
     }
   }, [time]);
 
@@ -149,6 +151,12 @@ const Home = () => {
               handleState={handleState}
               handleReset={handleReset}
             />
+          )}
+          {state === "timeup" && (
+           <TimeUp 
+             handleState ={handleState}
+           />
+
           )}
         </div>
       <Github />
