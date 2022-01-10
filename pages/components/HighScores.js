@@ -2,6 +2,14 @@ import React from 'react'
 
 
 const HighScores = ({handleState, highScore, hadleClearHighScore }) => {
+
+  let sortedList = []
+    if(highScore){
+      sortedList = highScore.sort((a , b ) => {
+        return b.score - a.score;
+      })
+    }
+
     return (
         <div>
        <div className="flex flex-col justify-center h-[90vh]">
@@ -11,7 +19,7 @@ const HighScores = ({handleState, highScore, hadleClearHighScore }) => {
         </h1>
         {highScore && (
         <>
-        {highScore.map((entry, index) => {
+        {sortedList.map((entry, index) => {
         return (
         <p className=" font-medium drop-shadow-sm mb-5 indent-3">
           {index+1}. {entry.name} - {entry.score}
